@@ -1,14 +1,16 @@
 export function getUser(input, ID, secret) {
+  document.querySelector("title").textContent = `Easy View | ${input}`;
   fetch(
     `https://api.github.com/users/${input}?client_id=${ID}&client_secret=${secret}`
   )
+    .catch((err) => {
+      // window.location.href = "notFound.html";
+      console.log("hello");
+    })
     .then((res) => {
       return res.json();
     })
 
-    .catch((err) => {
-      console.log(err);
-    })
     .then((data) => {
       const [
         following,
@@ -71,8 +73,4 @@ function createFollowers(repos, followers, following) {
       }
     }, 1);
   });
-}
-
-export function hello() {
-  console.log("hello");
 }
