@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+
+:root {
+  --accent-color: #38fee3;
+  --bg-color: #14163e;
+  font-size: 18px;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.first {
+  color: #fff;
+  font-family: "Quicksand";
+  background-color: var(--bg-color);
+}
+.outerContainer {
+  display: flex;
+  justify-content: center;
+}
+.container {
+  margin-top: 150px;
+  text-align: center;
+}
+.container i {
+  font-size: 8rem;
+  color: var(--accent-color);
+  margin-bottom: 25px;
+}
+.container h1 {
+  font-size: 5rem;
+  font-weight: normal;
+  letter-spacing: 5px;
+  margin-bottom: 5px;
+  min-width: 200px;
+}
+
+.container h2 {
+  font-size: 1.5rem;
+}
+
+.container h3 {
+  margin-top: 50px;
+  font-weight: normal;
+}
+
+.container input {
+  margin-top: 35px;
+  width: 90%;
+  height: 50px;
+  background-color: #31334e;
+  border: none;
+  border-radius: 7px;
+  color: #fff;
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: "Quicksand";
+  font-weight: normal;
+}
+.container input:focus {
+  outline: none;
+}
+.container #viewProfile {
+  display: block;
+  width: 30%;
+  margin: 50px 35%;
+  background-color: var(--accent-color);
+  height: 40px;
+  border: none;
+  border-radius: 7px;
+  font-family: "Quicksand";
+
+  font-size: 1.3rem;
+}
+
+/* Profile styles */
+
+/* Header styles */
+header {
+  height: 200px;
+  background: var(--bg-color);
+  position: relative;
+}
+.profileContainer {
+  width: 60%;
+  height: 200px;
+  margin: 0 20%;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #fff;
+  position: relative;
+}
+
+.profileGrid {
+  width: 330px;
+  height: 200px;
+  display: grid;
+  grid-gap: 200px;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  position: relative;
+}
+
+.avatar {
+  border-radius: 50%;
+  border: 3px solid #fff;
+  height: 150px;
+  position: absolute;
+  left: 0;
+  top: 10%;
+}
+
+.infoSection {
+  position: absolute;
+  right: 0;
+  top: 22%;
+}
+
+.infoSection h1 {
+  font-weight: normal;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+.infoSection a {
+  font-size: 1rem;
+  color: #2a8b7e;
+  text-decoration: none;
+  margin-bottom: 5px;
+  display: block;
+}
+.secondaryText {
+  font-size: 1rem;
+  font-weight: normal;
+  margin-bottom: 5px;
+  color: #cdddde;
+}
+.logo {
+  color: var(--accent-color);
+  font-size: 2.5rem;
+}
+.gitHubIcon {
+  position: absolute;
+  top: 60px;
+  right: 50px;
+}
+.easyView {
+  position: absolute;
+  font-weight: normal;
+  font-family: "Quicksand";
+  font-size: 1.7rem;
+  top: 100px;
+  right: 0;
+}
+/* Stats styles */
+
+.stats {
+  background-color: #e9e9e9;
+  height: 60vh;
+  min-height: 500px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.followGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: #fff;
+  height: 100px;
+  width: 400px;
+  margin-top: 75px;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  border-radius: 20px;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.following,
+.followers {
+  position: relative;
+}
+
+.following::after,
+.followers::after {
+  position: absolute;
+  content: "";
+  width: 3px;
+  height: 80%;
+  background-color: #e9e9e9;
+  left: -60%;
+  top: 10%;
+}
+.followGrid h3 {
+  font-size: 1.5rem;
+}
+.statTitle {
+  font-size: 0.8rem;
+}
+.graphGrid {
+  position: absolute;
+  top: 45%;
+  width: 60%;
+  left: 20%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  grid-gap: 50px;
+  font-family: "Source Sans Pro", sans-serif;
+}
+.graph {
+  background-color: #fff;
+  height: 45vh;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+.graphGrid h2 {
+  font-weight: normal;
+  font-size: 1.2rem;
+  margin-top: 25px;
+}
+
+.reposSection {
+  height: 50vh;
+  background-color: var(--bg-color);
+}

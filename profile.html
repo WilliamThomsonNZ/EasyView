@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+      integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA=="
+      crossorigin="anonymous"
+    />
+    <link rel="icon" href="imgs/icon.png" type="icon/png" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Easy View</title>
+  </head>
+  <body>
+    <header>
+      <div class="profileContainer">
+        <div class="profileGrid">
+          <img
+            class="avatar"
+            id="avatar"
+            src="imgs/stockProfile.png"
+            alt="user avatar"
+          />
+          <div class="infoSection">
+            <h1 id="name"></h1>
+            <a href="" id="githubUrl"></a>
+            <h2 class="secondaryText">
+              <i class="fas fa-thumbtack"></i>
+              <span id="location"></span>
+            </h2>
+            <h2 class="secondaryText">
+              <i class="far fa-calendar-alt"></i>
+              <span id="joined"></span>
+            </h2>
+          </div>
+        </div>
+        <div class="logo">
+          <i class="fab fa-github gitHubIcon"></i>
+          <h2 class="easyView">Easy View</h2>
+        </div>
+      </div>
+    </header>
+    <section class="stats">
+      <div class="followGrid">
+        <div class="repos">
+          <h3 id="repoCount" class="counter">0</h3>
+          <span class="statTitle">Repositories</span>
+        </div>
+        <div class="followers">
+          <h3 id="followerCount" class="counter">0</h3>
+          <span class="statTitle">Followers</span>
+        </div>
+        <div class="following">
+          <h3 id="followingCount" class="counter">0</h3>
+          <span class="statTitle">Following</span>
+        </div>
+      </div>
+      <div class="graphGrid">
+        <div class="languages graph">
+          <h2>Top Languages</h2>
+          <div class="languageGraph"></div>
+        </div>
+        <div class="stars graph">
+          <h2>Most Starred</h2>
+          <div class="languageGraph"></div>
+        </div>
+        <div class="starsByLanguage graph">
+          <h2>Stars by Language</h2>
+          <div class="languageGraph"></div>
+        </div>
+      </div>
+    </section>
+    <section class="reposSection"></section>
+    <script src="js/graphs.js"></script>
+    <!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.0-alpha/Chart.esm.min.js"
+      integrity="sha512-4/ieKvM1PqCx8rHARTtOjLgcAA46L1AhFLXtKxzVjcpVVvbFF5w6QTrjHvXfm1LrrPxVQqPfUGpZbADMu6JKvQ=="
+      crossorigin="anonymous"
+    ></script> -->
+    <script type="module" src="js/profile.js"></script>
+  </body>
+</html>
