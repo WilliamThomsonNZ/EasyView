@@ -72,3 +72,7 @@ function createFollowers(repos, followers, following) {
     }, 1);
   });
 }
+
+export function hello() {
+  console.log("hello");
+}
