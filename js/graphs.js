@@ -1,29 +1,37 @@
 import { langColor } from "./langColors.js";
+import { initRepos } from "./featuredRepos.js";
 
-// let over100Array = [];
-let below100Array = [];
+let languageArray = [];
+let reposArray = [];
 let finalArray = [];
 let counts = {};
 
-export function getRepos(input, counter) {
+function getRepos(input, counter) {
   //Recursive function to loop through and get all languages
   async function getLanguages(input, counter) {
     const response = await fetch(
       `https://api.github.com/users/${input}/repos?per_page=100\&page=${counter}`
     );
     const data = await response.json();
+
     try {
       if (Object.keys(data).length < 100) {
-        below100Array = data.map((repo, index) => {
+        languageArray = data.map((repo, index) => {
           return data[index].language;
         });
-        finalArray.push(below100Array);
+        finalArray.push(languageArray);
+        data.forEach((repo) => {
+          reposArray.push(repo);
+        });
         return;
       }
-      below100Array = data.map((repo, index) => {
+      languageArray = data.map((repo, index) => {
         return data[index].language;
       });
-      finalArray.push(below100Array);
+      data.forEach((repo) => {
+        reposArray.push(repo);
+      });
+      finalArray.push(languageArray);
       counter++;
       await getLanguages(input, counter);
     } catch (error) {
@@ -33,13 +41,11 @@ export function getRepos(input, counter) {
   getLanguages(input, counter).then((data) => {
     //getting the length of the array of arrays containing languages
     let arrayLegnth = finalArray.length;
-
+    initRepos();
     //joining all arrays together
     const concatArr = finalArray.concat(...finalArray);
-
     // removing the arrays from the concatenated array
     let newArr = concatArr.slice(arrayLegnth);
-
     //counting amount of each language from repos
     newArr.forEach((language) => {
       counts[language] = (counts[language] || 0) + 1;
@@ -87,3 +93,5 @@ export function getRepos(input, counter) {
     });
   });
 }
+
+export { reposArray, getRepos };

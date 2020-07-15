@@ -3,7 +3,7 @@
 
 :root {
   --accent-color: #38fee3;
-  --bg-color: #14163e;
+  --bg-color: #0f102e;
   font-size: 18px;
 }
 * {
@@ -51,7 +51,7 @@
   margin-top: 35px;
   width: 90%;
   height: 50px;
-  background-color: #31334e;
+  background-color: #25273d;
   border: none;
   border-radius: 7px;
   color: #fff;
@@ -230,7 +230,7 @@ header {
 
 /* Featured Repos Styles */
 .reposSection {
-  height: 50vh;
+  height: 100%;
   background-color: var(--bg-color);
   font-family: "Source Sans Pro", sans-serif;
   color: #fff;
@@ -245,6 +245,7 @@ header {
   padding-top: 250px;
   position: relative;
   letter-spacing: 2px;
+  display: inline-block;
 }
 .repoContainer h2::after {
   content: "";
@@ -254,4 +255,48 @@ header {
   bottom: -10px;
   left: 0;
   background-color: var(--accent-color);
+}
+.repoContainer p {
+  margin-left: 30px;
+  display: inline-block;
+}
+.repoContainer select {
+  display: inline-block;
+  margin-left: 15px;
+  padding: 5px 15px;
+  background-color: var(--accent-color);
+  border-radius: 5px;
+  border: solid 2px #fff;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.9rem;
+}
+.featuredRepos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 20px;
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+
+.cardContainer {
+  width: 100%;
+  height: 100%;
+  min-height: 150px;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  color: var(--bg-color);
+}
+
+.cardContainer p {
+  margin: 10px 0;
+  font-size: 1rem;
+  display: block;
+}
+
+.cardContainer i {
+  color: red;
+  padding-right: 5px;
+  display: inline-block;
 }
