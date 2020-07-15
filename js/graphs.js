@@ -1,4 +1,4 @@
-import { langColor } from "./langColors.js";
+import { langColor, langColorVals } from "./langColors.js";
 import { initRepos } from "./featuredRepos.js";
 
 let languageArray = [];
@@ -50,9 +50,14 @@ function getRepos(input, counter) {
     newArr.forEach((language) => {
       counts[language] = (counts[language] || 0) + 1;
     });
+    console.log(counts);
     const languageName = Object.keys(counts);
+    //setting colors for graph
+    let backgroundColors = [];
+    languageName.forEach((lang) => {
+      backgroundColors.push(langColorVals[lang]);
+    });
     const languageValue = Object.values(counts);
-
     //creating the chart using chart.js
     let myChart = document.getElementById("lGraph").getContext("2d");
     let languageStatsGraph = new Chart(myChart, {
@@ -63,7 +68,7 @@ function getRepos(input, counter) {
           {
             label: "language",
             data: languageValue,
-            backgroundColor: langColor,
+            backgroundColor: backgroundColors,
             borderWidth: 1,
             borderColor: "#fff",
           },
@@ -71,10 +76,11 @@ function getRepos(input, counter) {
       },
       options: {
         legend: {
-          position: "right",
-          align: "start",
+          position: "left",
+          align: "center",
           labels: {
             fontSize: 15,
+            boxWidth: 10,
           },
         },
         layout: {

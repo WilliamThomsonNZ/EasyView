@@ -1,4 +1,6 @@
 import { reposArray } from "./graphs.js";
+import { langColorVals } from "./langColors.js";
+
 let finalRepoArray = [];
 
 function createRepoGrid() {
@@ -40,11 +42,19 @@ function setRepos() {
   finalRepoArray.forEach((repo, index) => {
     let repos = document.getElementById(`repo${index + 1}`);
     let content = document.createElement("div");
+    console.log(repo);
     content.innerHTML = `<div class = "cardContainer">
-        <h3>${repo.name}</h3>
+        <h3><a href = "${repo.html_url}">${repo.name}</a></h3>
         <p>${repo.description}</p>
-        <i class="fas fa-circle"></i><span>${repo.language}</span>
+        <div class = "languageColor"><i class="fas fa-circle" 
+        style="color:${getColor(repo.language)}
+        "></i><span>${repo.language}</span>
+        <i class="fas fa-star"></i><span>${repo.stargazers_count}</span>
+        <i class="fas fa-code-branch"></i><span>${repo.forks_count}</span>
+        <span>${repo.size} KB</span>
+        </div>
       </div>`;
+
     repos.appendChild(content);
   });
 }
@@ -52,5 +62,14 @@ function clearRepos() {
   finalRepoArray.forEach((repo, index) => {
     document.getElementById(`repo${index + 1}`).innerHTML = "";
   });
+}
+function getColor(language) {
+  let circleColor;
+  for (let lang in langColorVals) {
+    if (lang == language) {
+      circleColor = langColorVals[lang];
+    }
+  }
+  return circleColor;
 }
 export { createRepoGrid, initRepos };

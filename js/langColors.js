@@ -1,4 +1,4 @@
-const langColorvals = {
+const langColorVals = {
   Mercury: "#ff2b2b",
   TypeScript: "#2b7489",
   PureBasic: "#00cafe",
@@ -199,5 +199,5 @@ const langColorvals = {
   nesC: "#94B0C7",
 };
 
-const langColor = Object.values(langColorvals);
-export { langColor };
+const langColor = Object.values(langColorVals);
+export { langColor, langColorVals };
