@@ -236,7 +236,7 @@ header {
 
 .repoContainer {
   width: 60%;
-  margin: 0 20%;
+  margin: 0 auto;
 }
 
 .repoContainer h2 {
@@ -356,7 +356,7 @@ header {
   .repoContainer,
   .profileContainer {
     width: 80%;
-    margin: 0 10%;
+    margin: 0 auto;
   }
 }
 

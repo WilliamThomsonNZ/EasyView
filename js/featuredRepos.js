@@ -44,7 +44,7 @@ function setRepos() {
     let content = document.createElement("div");
     console.log(repo);
     content.innerHTML = `<div class = "cardContainer">
-        <h3><a href = "${repo.html_url}">${repo.name}</a></h3>
+        <h3><a href = "${repo.html_url}" target = "_blank">${repo.name}</a></h3>
         <p>${repo.description}</p>
         <div class = "languageColor"><i class="fas fa-circle" 
         style="color:${getColor(repo.language)}
