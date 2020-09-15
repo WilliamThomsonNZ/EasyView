@@ -139,8 +139,10 @@ header {
   color: #cdddde;
 }
 .logo {
-  color: var(--accent-color);
   font-size: 2.5rem;
+}
+.logo a {
+  color: var(--accent-color);
 }
 .gitHubIcon {
   position: absolute;
