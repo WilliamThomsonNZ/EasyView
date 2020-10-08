@@ -19,6 +19,6 @@ input.addEventListener("keydown", () => {
 function searchUser() {
   let userName = input.value;
   sessionStorage.setItem("username", userName);
-  window.location.href = "profile.html";
+  window.location.href = "profile";
   input.value = "";
 }
